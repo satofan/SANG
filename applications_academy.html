@@ -24,62 +24,70 @@
         <a href="military_academy.html">Military Academy</a>
     </li>
     </nav>
-    <form action="https://discord.com/api/webhooks/1211381723602882610/UaD-uVDMXNT1E77cxS7BI6YW6obAAdkSUFtonMQGuLLDVQt91-5Ik5ET-guV6xHn1Jle" method="POST">
-      <input type="hidden" name="payload_json" value='{
-          "content": "<@783414932128923708>",
-          "embeds": [
-              {
-                  "title": "Новая заявка! От Academy!",
-                  "color": 5219822,
-                  "fields": [
-                      {
-                          "name": "Имя Фамилия",
-                          "value": "Change",
-                          "inline": false
-                      },
-                      {
-                          "name": "С какого на какой повышаетесь",
-                          "value": "Change",
-                          "inline": false
-                      },
-                      {
-                          "name": "Экскурсия по Форт Занкудо.",
-                          "value": "Change",
-                          "inline": false
-                      },
-                      {
-                          "name": "Водная лекция.",
-                          "value": "Change",
-                          "inline": false
-                      },
-                      {
-                          "name": "Военная присяга",
-                          "value": "Change",
-                          "inline": false
-                      }
-                  ],
-                  "footer": {
-                      "text": "This is a footer"
-                  },
-                  "timestamp": "2022-05-04T14:45:00.000Z"
-              }
-          ]
-      }' />
-      <textarea id="embedField1Value" rows="1" cols="50" oninput="updateValue()">Value 1</textarea>
-      <textarea id="embedField2Value" rows="1" cols="50" oninput="updateValue()">Value 2</textarea>
-      <button type="submit">Отправить</button>
-  
-      <script>
-          function updateValue() {
-              const payloadJson = document.querySelector('input[name="payload_json"]');
-              const embedField1Value = document.querySelector('#embedField1Value');
-              const embedField2Value = document.querySelector('#embedField2Value');
-              const payload = JSON.parse(payloadJson.value);
-              payload.embeds[0].fields[0].value = embedField1Value.value;
-              payloadJson.value = JSON.stringify(payload);
-          }
-      </script>
-  </form>
+
+    <div class="table-container">
+        <table class="up">
+            <thead>
+                <tr>
+                    <th>C Рекрут [1] до Рядовой [2]</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Экскурсия по Форт Занкудо.</td>
+                    <td><a href="ссылка на сайт ma" target="_blank">Экскурсия</a></td>
+                </tr>
+                <tr>
+                    <td>Водная лекция.</td>
+                    <td><a href="ссылка на сайт ma" target="_blank">Лекция</a></td>
+                </tr>
+                <tr>
+                    <td>Принять военную присягу.</td>
+                    <td><a href="ссылка на сайт ma" target="_blank">Присяга</a></td>
+                </tr>
+                <tr>
+                    <td>Получение нашивки.</td>
+                    <td><a href="ссылка на сайт ma" target="_blank">Нашивка</a></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: right;">
+                        <a class="buttonup"  href="applications_academy2.html">Отправить Заявку</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="up table-right">
+            <thead>
+                <tr>
+                    <th>С Рядовой [2] до Специалист [3]</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Экскурсия по Форт Занкудо.</td>
+                    <td><a href="ссылка на сайт ma" target="_blank">Экскурсия</a></td>
+                </tr>
+                <tr>
+                    <td>Водная лекция.</td>
+                    <td><a href="ссылка на сайт ma" target="_blank">Лекция</a></td>
+                </tr>
+                <tr>
+                    <td>Принять военную присягу.</td>
+                    <td><a href="ссылка на сайт ma" target="_blank">Присяга</a></td>
+                </tr>
+                <tr>
+                    <td>Получение нашивки.</td>
+                    <td><a href="ссылка на сайт ma" target="_blank">Нашивка</a></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: right;">
+                        <a class="buttonup"  href="applications_academy2.html">Отправить Заявку</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </div>
   <div class="centervidio">
   </div>

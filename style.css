@@ -9,7 +9,7 @@
     margin: 0 auto;
   }
   body {
-    color:white;
+    color:white !important; 
     background: rgb(33, 33, 35) !important;
   }
   .logo{
@@ -154,3 +154,31 @@
     text-decoration: none;
     background: linear-gradient(to right, #8e2de2, #4a00e0); /* Градиентный фон */
   }
+  .up {
+    background-color: #4bc72c;
+    border-radius: 13px;
+    color: black;
+
+  }
+  .buttonup {
+    padding-right: 190px;
+    margin-bottom: 10px;
+    border-radius: 13px;
+    color: #000000;
+    background-color: #6cec8c;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .buttonup span {
+    text-align: center;
+    display: block;
+}
+.table-container {
+  display: flex;
+  flex-direction: row;
+}
+.table-right {
+  margin-left: 100px;
+}
