@@ -24,45 +24,6 @@
         <a href="military_academy.html">Military Academy</a>
     </li>
     </nav>
-    <form action="https://discord.com/api/webhooks/1211381723602882610/UaD-uVDMXNT1E77cxS7BI6YW6obAAdkSUFtonMQGuLLDVQt91-5Ik5ET-guV6xHn1Jle" method="POST">
-      <input type="hidden" name="payload_json" value='{
-          "content": "<@783414932128923708>",
-          "embeds": [
-              {
-                  "title": "Новая заявка!",
-                  "color": 5219822,
-                  "fields": [
-                      {
-                          "name": "Имя Фамилия",
-                          "value": "",
-                          "inline": true
-                      },
-                      {
-                          "name": "С какого на какой повышаетесь",
-                          "value": "Value 2",
-                          "inline": false
-                      }
-                  ],
-                  "footer": {
-                      "text": "This is a footer"
-                  },
-                  "timestamp": "2022-05-04T14:45:00.000Z"
-              }
-          ]
-      }' />
-      <textarea id="embedField1Value" rows="1" cols="50" oninput="updateValue()">Value 1</textarea>
-      <button type="submit">Отправить</button>
-  
-      <script>
-          function updateValue() {
-              const payloadJson = document.querySelector('input[name="payload_json"]');
-              const embedField1Value = document.querySelector('#embedField1Value');
-              const payload = JSON.parse(payloadJson.value);
-              payload.embeds[0].fields[0].value = embedField1Value.value;
-              payloadJson.value = JSON.stringify(payload);
-          }
-      </script>
-  </form>
 </div>
   <div class="centervidio">
     <iframe width="1000" height="500"src="https://www.youtube.com/embed/AzOiCql4OV4?si=cmcGuFIT7ffGo8jk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
