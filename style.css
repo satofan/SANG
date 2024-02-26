@@ -155,7 +155,7 @@
     background: linear-gradient(to right, #8e2de2, #4a00e0); /* Градиентный фон */
   }
   .up {
-    background-color: #4bc72c;
+    background: url(src/academy.jpg);
     border-radius: 13px;
     color: black;
 
@@ -175,6 +175,27 @@
   display: flex;
   flex-direction: row;
 }
+
+.table-kmb {
+  display: flex;
+  flex-direction: row;
+}
+.upkmb {
+  background: url(src/kmb.jpg);
+  border-radius: 13px;
+  color: black;
+
+}
 .table-right {
   margin-left: 100px;
+}
+.table-ma {
+  display: flex;
+  flex-direction: row;
+}
+.upma {
+  background: url(src/ma.png);
+  border-radius: 13px;
+  color: black;
+
 }
