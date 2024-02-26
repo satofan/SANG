@@ -81,8 +81,7 @@
   }
   .center{
     color: white !important;
-    text-align: center;
-    font-size: 50px;
+    text-align: center !important;
   }
   .centervidio{
     color: white !important;
@@ -161,13 +160,13 @@
 
   }
   .buttonup {
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
     padding-right: 190px;
-    margin-bottom: 10px;
     border-radius: 13px;
     color: #000000;
     background-color: #6cec8c;
-    display: block;
-    text-align: center;
     text-decoration: none;
     font-weight: bold;
   }
@@ -183,7 +182,7 @@
 .upkmb {
   background: url(src/kmb.jpg);
   border-radius: 13px;
-  color: black;
+  color: white;
 
 }
 .table-right {
@@ -198,4 +197,8 @@
   border-radius: 13px;
   color: black;
 
+}
+.text {
+  border-radius: 20px;
+  background-color: #52d439;
 }

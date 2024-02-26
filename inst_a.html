@@ -24,12 +24,12 @@
         <a href="military_academy.html">Military Academy</a>
     </li>
     </nav>
-    <form action="https://discord.com/api/webhooks/1211381723602882610/UaD-uVDMXNT1E77cxS7BI6YW6obAAdkSUFtonMQGuLLDVQt91-5Ik5ET-guV6xHn1Jle" method="POST">
+    <form action="https://discord.com/api/webhooks/1211763778371199078/IWQzzgZjU6gVQ_ZFlN-XzSAdLGW8XrXQFOlFjJStiqXLNCHwCEcDaeZNW5St7KdtdwcK" method="POST">
         <input type="hidden" name="payload_json" value='{
             "content": "<@783414932128923708>",
             "embeds": [
                 {
-                    "title": "Новая заявка! От Academy!",
+                    "title": "Запрос! От Academy!",
                     "color": 5219822,
                     "fields": [
                         {
@@ -38,38 +38,26 @@
                             "inline": false
                         },
                         {
-                            "name": "С какого на какой повышаетесь",
-                            "value": "C Рекрут [1] до Рядовой [2]",
-                            "inline": false
-                        },
-                        {
-                            "name": "Экскурсия по Форт Занкудо.",
-                            "value": "-",
-                            "inline": false
-                        },
-                        {
-                            "name": "Водная лекция.",
-                            "value": "-",
-                            "inline": false
-                        },
-                        {
-                            "name": "Военная присяга",
+                            "name": "Что вам нужно",
                             "value": "-",
                             "inline": false
                         }
                     ],
                     "footer": {
-                        "text": "This is a footer"
-                    },
-                    "timestamp": "2022-05-04T14:45:00.000Z"
+                        "text": "By Satofan"
+                    }
                 }
             ]
         }' />
-        <textarea id="embedField1Value" rows="1" cols="50" oninput="updateValue(0)">Имя</textarea>
-        <textarea id="embedField3Value" rows="1" cols="50" oninput="updateValue(2)">Имя</textarea>
-        <textarea id="embedField4Value" rows="1" cols="50" oninput="updateValue(3)">Имя</textarea>
-        <textarea id="embedField5Value" rows="1" cols="50" oninput="updateValue(4)">Имя</textarea>
-        <button type="submit">Отправить</button>
+    <div class="center">
+        <p>С Рядовой [2] до Специалист [3]</p>
+        <p>Имя и Фамилия</p>
+        <textarea class="text" id="embedField1Value" rows="1" cols="50" oninput="updateValue(0)"></textarea>
+        <p>Что вам нужно?.</p>
+        <textarea class="text" id="embedField1Value" rows="1" cols="50" oninput="updateValue(1)"></textarea>
+
+        <button class="buttonup" type="submit">Отправить</button>
+    </div>
     
         <script>
             function updateValue(fieldIndex) {
@@ -78,11 +66,14 @@
                 const embedField3Value = document.querySelector('#embedField3Value');
                 const embedField4Value = document.querySelector('#embedField4Value');
                 const embedField5Value = document.querySelector('#embedField5Value');
+                const embedField6Value = document.querySelector('#embedField6Value');
+                const embedField7Value = document.querySelector('#embedField7Value');
+                const embedField999Value = document.querySelector('#embedField999Value');
                 const payload = JSON.parse(payloadJson.value);
                 if (payload.embeds[0].fields.length <= fieldIndex) {
                     payload.embeds[0].fields.push({});
                 }
-                payload.embeds[0].fields[fieldIndex].value = fieldIndex === 1 ? "C Рекрут [1] до Рядовой [2]" : fieldIndex === 0 ? embedField1Value.value : fieldIndex === 2 ? embedField3Value.value : fieldIndex === 3 ? embedField4Value.value : fieldIndex === 4 ? embedField5Value.value : "";
+                payload.embeds[0].fields[fieldIndex].value = fieldIndex === 998 ? "С Рядовой [2] до Специалист [3]" : fieldIndex === 0 ? embedField1Value.value : fieldIndex === 1 ? embedField3Value.value : fieldIndex === 3 ? embedField4Value.value : fieldIndex === 4 ? embedField5Value.value : fieldIndex === 5 ? embedField6Value.value : fieldIndex === 6 ? embedField7Value.value : fieldIndex === 7 ? embedField999Value.value : "";
                 payloadJson.value = JSON.stringify(payload);
             }
         </script>
