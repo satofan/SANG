@@ -29,17 +29,32 @@
           "content": "<@783414932128923708>",
           "embeds": [
               {
-                  "title": "Новая заявка!",
+                  "title": "Новая заявка! От Academy!",
                   "color": 5219822,
                   "fields": [
                       {
                           "name": "Имя Фамилия",
-                          "value": "",
-                          "inline": true
+                          "value": "Change",
+                          "inline": false
                       },
                       {
                           "name": "С какого на какой повышаетесь",
-                          "value": "Value 2",
+                          "value": "Change",
+                          "inline": false
+                      },
+                      {
+                          "name": "Экскурсия по Форт Занкудо.",
+                          "value": "Change",
+                          "inline": false
+                      },
+                      {
+                          "name": "Водная лекция.",
+                          "value": "Change",
+                          "inline": false
+                      },
+                      {
+                          "name": "Военная присяга",
+                          "value": "Change",
                           "inline": false
                       }
                   ],
@@ -51,12 +66,14 @@
           ]
       }' />
       <textarea id="embedField1Value" rows="1" cols="50" oninput="updateValue()">Value 1</textarea>
+      <textarea id="embedField2Value" rows="1" cols="50" oninput="updateValue()">Value 2</textarea>
       <button type="submit">Отправить</button>
   
       <script>
           function updateValue() {
               const payloadJson = document.querySelector('input[name="payload_json"]');
               const embedField1Value = document.querySelector('#embedField1Value');
+              const embedField2Value = document.querySelector('#embedField2Value');
               const payload = JSON.parse(payloadJson.value);
               payload.embeds[0].fields[0].value = embedField1Value.value;
               payloadJson.value = JSON.stringify(payload);
