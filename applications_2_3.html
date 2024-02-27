@@ -30,7 +30,7 @@
             "embeds": [
                 {
                     "title": "Новая заявка! От Academy!",
-                    "color": 5219822,
+                    "color": 7267852,
                     "fields": [
                         {
                             "name": "Имя Фамилия",
@@ -89,8 +89,16 @@
         <p>скрин из Дискорда ЧП, с ролью "ARMY"</p>
         <textarea class="text" id="embedField7Value" rows="1" cols="50" oninput="updateValue(6)"></textarea>
 
-        <button class="buttonup" type="submit">Отправить</button>
+        <button class="buttonup" type="submit" onclick="resetForm()">Отправить</button>
     </div>
+    <script>
+    function resetForm() {
+        const textareas = document.querySelectorAll('textarea.text');
+        textareas.forEach(textarea => {
+            textarea.value = '';
+        });
+    }
+    </script>
     
         <script>
             function updateValue(fieldIndex) {

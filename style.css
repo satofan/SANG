@@ -87,7 +87,6 @@
     color: white !important;
     text-align: center;
     font-size: 50px;
-    display: flex;
     justify-content: center;
     padding-top: 50px;
   }
@@ -201,4 +200,7 @@
 .text {
   border-radius: 20px;
   background-color: #52d439;
+}
+.gif {
+  height: 450px;
 }
