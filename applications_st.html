@@ -26,7 +26,7 @@
     </nav>
     <form action="https://discord.com/api/webhooks/1211381723602882610/UaD-uVDMXNT1E77cxS7BI6YW6obAAdkSUFtonMQGuLLDVQt91-5Ik5ET-guV6xHn1Jle" method="POST">
         <input type="hidden" name="payload_json" value='{
-            "content": "<@783414932128923708>",
+            "content": "<@&1086341945435103392>",
             "embeds": [
                 {
                     "title": "Новая заявка! От Military Academy!",
@@ -39,7 +39,7 @@
                         },
                         {
                             "name": "С какого на какой повышаетесь",
-                            "value": "С Рядовой [2] до Специалист [3]",
+                            "value": "Стажировка",
                             "inline": false
                         },
                         {
@@ -114,7 +114,7 @@
                 if (payload.embeds[0].fields.length <= fieldIndex) {
                     payload.embeds[0].fields.push({});
                 }
-                payload.embeds[0].fields[fieldIndex].value = fieldIndex === 1 ? "С Рядовой [2] до Специалист [3]" : fieldIndex === 0 ? embedField1Value.value : fieldIndex === 2 ? embedField3Value.value : fieldIndex === 3 ? embedField4Value.value : fieldIndex === 4 ? embedField5Value.value : fieldIndex === 5 ? embedField6Value.value : fieldIndex === 6 ? embedField7Value.value : fieldIndex === 7 ? embedField999Value.value : "";
+                payload.embeds[0].fields[fieldIndex].value = fieldIndex === 1 ? "Стажировка" : fieldIndex === 0 ? embedField1Value.value : fieldIndex === 2 ? embedField3Value.value : fieldIndex === 3 ? embedField4Value.value : fieldIndex === 4 ? embedField5Value.value : fieldIndex === 5 ? embedField6Value.value : fieldIndex === 6 ? embedField7Value.value : fieldIndex === 7 ? embedField999Value.value : "";
                 payloadJson.value = JSON.stringify(payload);
             }
         </script>
