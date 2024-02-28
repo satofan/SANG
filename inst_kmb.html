@@ -54,7 +54,7 @@
         <p>Имя и Фамилия</p>
         <textarea class="text" id="embedField1Value" rows="1" cols="50" oninput="updateValue(0)"></textarea>
         <p>Что вам нужно?.</p>
-        <textarea class="text" id="embedField1Value" rows="1" cols="50" oninput="updateValue(1)"></textarea>
+        <textarea class="text" id="embedField2Value" rows="1" cols="50" oninput="updateValue(1)"></textarea>
 
         <button class="buttonup" type="submit" onclick="resetForm()">Отправить</button>
     </div>
@@ -71,7 +71,7 @@
             function updateValue(fieldIndex) {
                 const payloadJson = document.querySelector('input[name="payload_json"]');
                 const embedField1Value = document.querySelector('#embedField1Value');
-                const embedField3Value = document.querySelector('#embedField3Value');
+                const embedField2Value = document.querySelector('#embedField2Value');
                 const embedField4Value = document.querySelector('#embedField4Value');
                 const embedField5Value = document.querySelector('#embedField5Value');
                 const embedField6Value = document.querySelector('#embedField6Value');
