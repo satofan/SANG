@@ -25,12 +25,12 @@
     </li>
     </nav>
     <form action="https://discord.com/api/webhooks/1212098523328155718/2AZI0Wtd93_7VJSrwR4yfYSLxOVKsxHDE7BkE47GEmiCfg851P6OYgVzufhb7xbyVftE" method="POST">
-        <input type="hidden" name="payload_json" value='{ 
+        <input type="hidden" name="payload_json" value='{
             "content": "<@&1086341945435103392> <@&1086341970009522188>",
             "embeds": [
                 {
-                    "title": "Новая отчет! От Military Academy!",
-                    "color": 54783,
+                    "title": "Новая заявка! От Military Azademy!",
+                    "color": 7267852,
                     "fields": [
                         {
                             "name": "Имя Фамилия",
@@ -48,7 +48,7 @@
                             "inline": false
                         },
                         {
-                            "name": "Работа с академией",
+                            "name": "Работа с академией/кмб",
                             "value": "-",
                             "inline": false
                         },
@@ -56,7 +56,17 @@
                             "name": "Остальное",
                             "value": "-",
                             "inline": false
-                        }
+                        }, 
+                        {
+                            "name": "Остаток баллов с прошло отчета",
+                            "value": "-",
+                            "inline": false
+                        }, 
+                        {
+                            "name": "Набранно балов",
+                            "value": "-",
+                            "inline": false
+                        }        
                     ],
                     "footer": {
                         "text": "By Satofan"
@@ -65,17 +75,21 @@
             ]
         }' />
     <div class="center">
-        <p>Отчет на повышение</p>
+        <p>C Рекрут [1] до Рядовой [2]</p>
         <p>Имя и Фамилия</p>
         <textarea class="text" id="embedField1Value" rows="1" cols="50" oninput="updateValue(0)"></textarea>
-        <p>С какого на какой повышаетесь</p>
-        <textarea class="text" id="embedField2Value" rows="1" cols="50" oninput="updateValue(1)"></textarea>
+        <p>с какого ранга на какой повышаетесь</p>
+        <textarea class="text" id="embedField3Value" rows="1" cols="50" oninput="updateValue(1)"></textarea>
         <p>Наборы</p>
-        <textarea class="text" id="embedField3Value" rows="1" cols="50" oninput="updateValue(2)"></textarea>
+        <textarea class="text" id="embedField4Value" rows="1" cols="50" oninput="updateValue(2)"></textarea>
         <p>Работа с академией</p>
-        <textarea class="text" id="embedField4Value" rows="1" cols="50" oninput="updateValue(3)"></textarea>
+        <textarea class="text" id="embedField5Value" rows="1" cols="50" oninput="updateValue(3)"></textarea>
         <p>Остальное</p>
-        <textarea class="text" id="embedField5Value" rows="1" cols="50" oninput="updateValue(4)"></textarea>
+        <textarea class="text" id="embedFiel6Value" rows="1" cols="50" oninput="updateValue(4)"></textarea>
+        <p>Остаток баллов с прошлого отчета</p>
+        <textarea class="text" id="embedFiel7Value" rows="1" cols="50" oninput="updateValue(5)"></textarea>
+        <p>Набранно балов</p>
+        <textarea class="text" id="embedFiel8Value" rows="1" cols="50" oninput="updateValue(6)"></textarea>
         <button class="buttonup" type="submit" onclick="resetForm()">Отправить</button>
     </div>
     <script>
@@ -90,17 +104,17 @@
             function updateValue(fieldIndex) {
                 const payloadJson = document.querySelector('input[name="payload_json"]');
                 const embedField1Value = document.querySelector('#embedField1Value');
-                const embedField2Value = document.querySelector('#embedField2Value');
                 const embedField3Value = document.querySelector('#embedField3Value');
                 const embedField4Value = document.querySelector('#embedField4Value');
                 const embedField5Value = document.querySelector('#embedField5Value');
                 const embedField6Value = document.querySelector('#embedField6Value');
-                const embedField998Value = document.querySelector('#embedField998Value');
+                const embedField7Value = document.querySelector('#embedField7Value');
+                const embedField8Value = document.querySelector('#embedField8Value');
                 const payload = JSON.parse(payloadJson.value);
                 if (payload.embeds[0].fields.length <= fieldIndex) {
                     payload.embeds[0].fields.push({});
                 }
-                payload.embeds[0].fields[fieldIndex].value = fieldIndex === 998 ? "C Рекрут [1] до Рядовой [2]" ? embedField2Value.value : fieldIndex === 1 ? embedField1Value.value : fieldIndex === 0 ? embedField3Value.value : fieldIndex === 2 ? embedField4Value.value : fieldIndex === 3 ? embedField5Value.value : fieldIndex === 4 ? embedField6Value.value : "";
+                payload.embeds[0].fields[fieldIndex].value = fieldIndex === 1 ? "C Рекрут [1] до Рядовой [2]" : fieldIndex === 0 ? embedField1Value.value : fieldIndex === 2 ? embedField3Value.value : fieldIndex === 3 ? embedField4Value.value : fieldIndex === 4 ? embedField5Value.value : fieldIndex === 5 ? embedField6Value.value : "";
                 payloadJson.value = JSON.stringify(payload);
             }
         </script>
