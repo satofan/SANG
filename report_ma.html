@@ -100,7 +100,7 @@
                 if (payload.embeds[0].fields.length <= fieldIndex) {
                     payload.embeds[0].fields.push({});
                 }
-                payload.embeds[0].fields[fieldIndex].value = fieldIndex === 998 ? "C Рекрут [1] до Рядовой [2]" : fieldIndex === 0 ? embedField2Value.value : fieldIndex === 1 ? embedField1Value.value : fieldIndex === 2 ? embedField3Value.value : fieldIndex === 3 ? embedField4Value.value : fieldIndex === 4 ? embedField5Value.value : fieldIndex === 5 ? embedField6Value.value : "";
+                payload.embeds[0].fields[fieldIndex].value = fieldIndex === 998 ? "C Рекрут [1] до Рядовой [2]" ? embedField2Value.value : fieldIndex === 1 ? embedField1Value.value : fieldIndex === 0 ? embedField3Value.value : fieldIndex === 2 ? embedField4Value.value : fieldIndex === 3 ? embedField5Value.value : fieldIndex === 4 ? embedField6Value.value : "";
                 payloadJson.value = JSON.stringify(payload);
             }
         </script>
