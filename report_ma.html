@@ -99,24 +99,47 @@
             textarea.value = '';
         });
     }
-    </script>
         <script>
-            function updateValue(fieldIndex) {
-                const payloadJson = document.querySelector('input[name="payload_json"]');
-                const embedField1Value = document.querySelector('#embedField1Value');
-                const embedField3Value = document.querySelector('#embedField3Value');
-                const embedField4Value = document.querySelector('#embedField4Value');
-                const embedField5Value = document.querySelector('#embedField5Value');
-                const embedField6Value = document.querySelector('#embedField6Value');
-                const embedField7Value = document.querySelector('#embedField7Value');
-                const embedField8Value = document.querySelector('#embedField8Value');
-                const payload = JSON.parse(payloadJson.value);
-                if (payload.embeds[0].fields.length <= fieldIndex) {
-                    payload.embeds[0].fields.push({});
-                }
-                payload.embeds[0].fields[fieldIndex].value = fieldIndex === 1 ? "C Рекрут [1] до Рядовой [2]" : fieldIndex === 0 ? embedField1Value.value : fieldIndex === 2 ? embedField3Value.value : fieldIndex === 3 ? embedField4Value.value : fieldIndex === 4 ? embedField5Value.value : fieldIndex === 5 ? embedField6Value.value : "";
-                payloadJson.value = JSON.stringify(payload);
+
+        function updateValue(fieldIndex) {
+
+            const payloadJson = document.querySelector('input[name="payload_json"]');
+
+            const embedField1Value = document.querySelector('#embedField1Value');
+
+            const embedField3Value = document.querySelector('#embedField3Value');
+
+            const embedField4Value = document.querySelector('#embedField4Value');
+
+            const embedField5Value = document.querySelector('#embedField5Value');
+
+            const embedField6Value = document.querySelector('#embedField6Value');
+
+            const embedField7Value = document.querySelector('#embedField7Value');
+
+            const embedField8Value = document.querySelector('#embedField8Value');
+
+            const payload = JSON.parse(payloadJson.value);
+
+            if (payload.embeds[0].fields.length <= fieldIndex) {
+
+                payload.embeds[0].fields.push({});
+
             }
+
+            payload.embeds[0].fields[fieldIndex].value = embedField1Value.value;
+
+            if (fieldIndex === 1) {
+
+                payload.embeds[0].fields[fieldIndex].value = "C Рекрут [1] до Рядовой [2]";
+
+            } else if (fieldIndex === 2) {
+
+                payload.embeds[0].fields[fieldIndex].value = embedField3Value.value;
+
+            } else if (fieldIndex === 3) {
+
+                payload.embeds[0].fields[fieldIndex].value = embedField4Value.value;
         </script>
     </form>
 </div>
