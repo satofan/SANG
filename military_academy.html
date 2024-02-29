@@ -53,5 +53,10 @@
     <h1></h1>
     
   </div>
+ <script>
+  if (window.location.pathname === '/militaryacademy' && !localStorage.getItem('discordAccessToken')) {
+    window.location.replace('/auth');
+}
+ </script>
 </body>
 </html>
