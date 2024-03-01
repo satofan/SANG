@@ -7,24 +7,41 @@
     <title>SANG - Повышение</title>
 </head>
 <body>
+    <nav class="navigation">
+        <a href="index.html" class="logo">National Guard</a>
+        <ul class="navigation-holder">
+          <li class="nav-links">
+              <a href="academy.html">Academy</a>
+          </li>
+          <li class="nav-links">
+              <a href="kmb.html">КМБ</a>
+          </li>
+          <li class="nav-links">
+              <a href="military_academy.html">Military Academy</a>
+          </li>
+          </nav>
     <form id="webhookForm">
 <div class="center">
         <div class="form-group">
             <h2 style="height: 50px; margin-top: 20px;">Отчёт на повышение Military Academy</h2>
             <p>Имя Фамилия</p>
-            <input type="text" id="one" name="one" value="" class="form-group-input">
+            <input type="text" id="one" name="one" value="" class="form-group-input ma">
         </div>
         <div class="form-group">
-            <p>Прослушать базовый инструктаж</p>
-            <input type="text" id="three" name="three" value="" class="form-group-input">
+            <p>С какого на какой повышаетесь</p>
+            <input type="text" id="two" name="two" value="" class="form-group-input ma">
         </div>
         <div class="form-group">
-            <p>Провести самостоятельно 3 лекции</p>
-            <input type="text" id="four" name="four" value="" class="form-group-input">
+            <p>Проделанная работа</p>
+            <textarea class="form-group-input ma" name="three" id="three" cols="30" value="" rows="10"></textarea>
         </div>
         <div class="form-group">
-            <p>Пройти аттестацию</p>
-            <input type="text" id="five" name="five" value="" class="form-group-input">
+            <p>Всего баллов</p>
+            <input type="text" id="four" name="four" value="" class="form-group-input ma">
+        </div>
+        <div class="form-group">
+            <p>Баллов с прошлого отчёта</p>
+            <input type="text" id="five" name="five" value="" class="form-group-input ma">
         </div>
         <button type="submit" class="submite ma">Отправить заявку</button>
     </form>
@@ -35,11 +52,12 @@
     event.preventDefault();
 
     const one = document.getElementById('one').value;
+    const two = document.getElementById('two').value;
     const three = document.getElementById('three').value;
     const four = document.getElementById('four').value;
     const five = document.getElementById('five').value;
 
-    if (!one || !three || !four || !five) {
+    if (!one || !two || !three || !four || !five) {
         alert('Пожалуйста, заполните все поля.');
         return;
     }
@@ -62,17 +80,17 @@
                         inline: false
                     },
                     {
-                        name: 'Прослушать базовый инструктаж',
+                        name: 'Проделанная работа',
                         value: three,
                         inline: false
                     },
                     {
-                        name: 'Провести самостоятельно 3 лекции',
+                        name: 'Всего баллов',
                         value: four,
                         inline: false
                     },
                     {
-                        name: 'Пройти аттестацию',
+                        name: 'Баллов с прошлого отчёта',
                         value: five,
                         inline: false
                     }
@@ -98,6 +116,7 @@
 
         // Очистка полей формы
         document.getElementById('one').value = '';
+        document.getElementById('two').value = '';
         document.getElementById('three').value = '';
         document.getElementById('four').value = '';
         document.getElementById('five').value = '';
