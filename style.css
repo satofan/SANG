@@ -220,6 +220,22 @@
   margin-top: 10px;
 }
 .form-group-input {
+  background-color: #52d439;
+  border-radius:16px;
+  text-decoration: none;
+  width: 320px;
+  height: 25px;
+  border: 1px;
+}
+.form-group-input.kmb {
+  background-color: #ee811b;
+  border-radius:16px;
+  text-decoration: none;
+  width: 320px;
+  height: 25px;
+  border: 1px;
+}
+.form-group-input.ma {
   background-color: #00b7ff;
   border-radius:16px;
   text-decoration: none;
@@ -227,6 +243,7 @@
   height: 25px;
   border: 1px;
 }
+
 .submite.ma {
   background-color: #00c6ff;
   height: 30px;
@@ -237,7 +254,7 @@
   color: white;
 }
 .submite.kmb {
-  background-color: #ff008c;
+  background-color: #ee811b;
   height: 30px;
   width: 250px;
   margin-top: 10px;

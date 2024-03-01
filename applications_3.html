@@ -1,104 +1,127 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <script src="https://kit.fontawesome.com/ddecd49404.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>SANG - Повышение</title>
-    <link rel="shortcut icon" href="src/icon.ico" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navigation">
-  <a href="index.html" class="logo">National Guard</a>
-  <ul class="navigation-holder">
-    <li class="nav-links">
-        <a href="academy.html">Academy</a>
-    </li>
-    <li class="nav-links">
-        <a href="kmb.html">КМБ</a>
-    </li>
-    <li class="nav-links">
-        <a href="military_academy.html">Military Academy</a>
-    </li>
-    </nav>
-    <form action="https://discord.com/api/webhooks/1212102369001607179/_eWGTyHnBCUSZQ_eQ8NwwL5PaaKMTXw4-AuXqN5pU0kL8pq1vDTxnkikKpZX38I72wYY" method="POST">
-        <input type="hidden" name="payload_json" value='{
-            "content": "<@&1086341976988860456>",
-            "embeds": [
-                {
-                    "title": "Новая заявка! От КМБ!",
-                    "color": 16746004,
-                    "fields": [
-                        {
-                            "name": "Имя Фамилия",
-                            "value": "-",
-                            "inline": false
-                        },
-                        {
-                            "name": "С какого на какой повышаетесь",
-                            "value": "День 3",
-                            "inline": false
-                        },
-                        {
-                            "name": "Отстоять на КПП 1 Час. Или 3 поставки",
-                            "value": "-",
-                            "inline": false
-                        },
-                        {
-                            "name": "Принять участие в 1 наборе или 1 поставке",
-                            "value": "-",
-                            "inline": false
-                        }
-                    ],
-                    "footer": {
-                        "text": "By Satofan"
-                    }
-                }
-            ]
-        }' />
-    <div class="center">
-        <p>День 3</p>
-        <p>Имя и Фамилия</p>
-        <textarea class="text" id="embedField1Value" rows="1" cols="50" oninput="updateValue(0)"></textarea>
-        <p>Отстоять на КПП 1 Час. Или 3 поставки</p>
-        <textarea class="text" id="embedField3Value" rows="1" cols="50" oninput="updateValue(2)"></textarea>
-        <p>Принять участие в 1 наборе или 1 поставке</p>
-        <textarea class="text" id="embedField4Value" rows="1" cols="50" oninput="updateValue(3)"></textarea>
-        <button class="buttonup" type="submit" onclick="resetForm()">Отправить</button>
-    </div>
-    <script>
-    function resetForm() {
-        const textareas = document.querySelectorAll('textarea.text');
-        textareas.forEach(textarea => {
-            textarea.value = '';
-        });
-    }
-    </script>
-    
-        <script>
-            function updateValue(fieldIndex) {
-                const payloadJson = document.querySelector('input[name="payload_json"]');
-                const embedField1Value = document.querySelector('#embedField1Value');
-                const embedField3Value = document.querySelector('#embedField3Value');
-                const embedField4Value = document.querySelector('#embedField4Value');
-                const embedField5Value = document.querySelector('#embedField5Value');
-                const embedField6Value = document.querySelector('#embedField6Value');
-                const embedField7Value = document.querySelector('#embedField7Value');
-                const embedField999Value = document.querySelector('#embedField999Value');
-                const payload = JSON.parse(payloadJson.value);
-                if (payload.embeds[0].fields.length <= fieldIndex) {
-                    payload.embeds[0].fields.push({});
-                }
-                payload.embeds[0].fields[fieldIndex].value = fieldIndex === 1 ? "С Рядовой [2] до Специалист [3]" : fieldIndex === 0 ? embedField1Value.value : fieldIndex === 2 ? embedField3Value.value : fieldIndex === 3 ? embedField4Value.value : fieldIndex === 4 ? embedField5Value.value : fieldIndex === 5 ? embedField6Value.value : fieldIndex === 6 ? embedField7Value.value : fieldIndex === 7 ? embedField999Value.value : "-";
-                payloadJson.value = JSON.stringify(payload);
-            }
-        </script>
+    <nav class="navigation">
+        <a href="index.html" class="logo">National Guard</a>
+        <ul class="navigation-holder">
+          <li class="nav-links">
+              <a href="academy.html">Academy</a>
+          </li>
+          <li class="nav-links">
+              <a href="kmb.html">КМБ</a>
+          </li>
+          <li class="nav-links">
+              <a href="military_academy.html">Military Academy</a>
+          </li>
+          </nav>
+    <form id="webhookForm">
+<div class="center">
+        <div class="form-group">
+            <h2 style="height: 50px; margin-top: 20px;">Отчёт на повышение КМБ</h2>
+            <p>Имя Фамилия</p>
+            <input type="text" id="one" name="one" value="" class="form-group-input kmb">
+        </div>
+        <div class="form-group">
+            <p>Тренировка в тире.</p>
+            <input type="text" id="three" name="three" value="" class="form-group-input kmb">
+        </div>
+        <div class="form-group">
+            <p>Лекция по постовой службе и тэн-кодам.</p>
+            <input type="text" id="four" name="four" value="" class="form-group-input kmb">
+        </div>
+        <div class="form-group">
+            <p>Сдать экзамен по постовой службе и тэн-кодам.</p>
+            <input type="text" id="five" name="five" value="" class="form-group-input kmb">
+        </div>
+        <div class="form-group">
+            <p>Принять участие в поставке 3 раза</p>
+            <input type="text" id="six" name="six" value="" class="form-group-input kmb">
+        </div>
+        <button type="submit" class="submite kmb">Отправить заявку</button>
     </form>
 </div>
-  <div class="centervidio">
-  </div>
+
+    <script>
+        document.getElementById('webhookForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const one = document.getElementById('one').value;
+    const three = document.getElementById('three').value;
+    const four = document.getElementById('four').value;
+
+
+    if (!one || !three || !four) {
+        alert('Пожалуйста, заполните все поля.');
+        return;
+    }
+
+    const payload = {
+        content: '<@&1086341976988860456>',
+        embeds: [
+            {
+                title: 'Новая заявка! От КМБ!',
+                color: 15630619,
+                fields: [
+                    {
+                        name: 'Имя Фамилия',
+                        value: one,
+                        inline: false
+                    },
+                    {
+                        name: 'День',
+                        value: 'Третий',
+                        inline: false
+                    },
+                    {
+                        name: 'Отстоять на КПП 1 Час. Или 3 поставки.',
+                        value: three,
+                        inline: false
+                    },
+                    {
+                        name: 'Принять участие в 1 наборе или 1 поставке.',
+                        value: four,
+                        inline: false
+                    }
+                    
+                ],
+                "footer": {
+                        "text": "By Satofan"
+                    }
+            }
+        ]
+    };
+
+    try {
+        const response = await fetch('https://discord.com/api/webhooks/1212102369001607179/_eWGTyHnBCUSZQ_eQ8NwwL5PaaKMTXw4-AuXqN5pU0kL8pq1vDTxnkikKpZX38I72wYY', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            throw new Error('Ошибка при отправке заявки');
+        }
+
+        alert('Заявка успешно отправлена!');
+
+        // Очистка полей формы
+        document.getElementById('one').value = '';
+        document.getElementById('three').value = '';
+        document.getElementById('four').value = '';
+
+    } catch (error) {
+        console.error('Ошибка:', error);
+        alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.');
+    }
+});
+    </script>
 </body>
 </html>
