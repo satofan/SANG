@@ -244,6 +244,16 @@
   border: 1px;
 }
 
+.submite {
+  background-color: #52d439;
+  height: 30px;
+  width: 250px;
+  margin-top: 10px;
+  border-radius: 16px;
+  border: 1px;
+  color: black;
+}
+
 .submite.ma {
   background-color: #00c6ff;
   height: 30px;

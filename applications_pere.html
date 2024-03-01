@@ -1,133 +1,141 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <script src="https://kit.fontawesome.com/ddecd49404.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>SANG - Повышение</title>
-    <link rel="shortcut icon" href="icon.ico" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navigation">
-  <a href="index.html" class="logo">National Guard</a>
-  <ul class="navigation-holder">
-    <li class="nav-links">
-        <a href="academy.html">Academy</a>
-    </li>
-    <li class="nav-links">
-        <a href="kmb.html">КМБ</a>
-    </li>
-    <li class="nav-links">
-        <a href="military_academy.html">Military Academy</a>
-    </li>
-    </nav>
-    <form action="https://discord.com/api/webhooks/1211381723602882610/UaD-uVDMXNT1E77cxS7BI6YW6obAAdkSUFtonMQGuLLDVQt91-5Ik5ET-guV6xHn1Jle" method="POST">
-        <input type="hidden" name="payload_json" value='{
-            "content": "<@&1086341976988860456>",
-            "embeds": [
-                {
-                    "title": "Новая заявка! От Academy!",
-                    "color": 7267852,
-                    "fields": [
-                        {
-                            "name": "Имя Фамилия",
-                            "value": "-",
-                            "inline": false
-                        },
-                        {
-                            "name": "С какого на какой повышаетесь",
-                            "value": "Переатестация",
-                            "inline": false
-                        },
-                        {
-                            "name": "Экскурсия по Форту Занкудо, Вводная лекция, Присяга.",
-                            "value": "-",
-                            "inline": false
-                        },
-                        {
-                            "name": "Лекция по Караульному уставу и Тен-Кодам.",
-                            "value": "-",
-                            "inline": false
-                        },
-                        {
-                            "name": "Принять участвие в СО 2 раза или 1 час КПП.",
-                            "value": "-",
-                            "inline": false
-                        },
-                        {
-                            "name": "Сдать норматив по физ. подготовке.",
-                            "value": "-",
-                            "inline": false
-                        },
-                        {
-                            "name": "скрин из Дискорда ЧП, с ролью ARMY",
-                            "value": "-",
-                            "inline": false
-                        },
-                        {
-                            "name": "Сдача итогового экзамена.",
-                            "value": "-",
-                            "inline": false
-                        }
-                    ],
-                    "footer": {
-                        "text": "By Satofan"
-                    }
-                }
-            ]
-        }' />
-        <div class="center">
-            <p>Переатестация</p>
-            <p>Имя и Фамилия</p>
-            <textarea class="text" id="embedField1Value" rows="1" cols="50" oninput="updateValue(0)"></textarea>
-            <p>Экскурсия по Форту Занкудо, Вводная лекция, Присяга.</p>
-            <textarea class="text" id="embedField3Value" rows="1" cols="50" oninput="updateValue(2)"></textarea>
-            <p>Лекция по Караульному уставу и Тен-Кодам.</p>
-            <textarea class="text" id="embedField4Value" rows="1" cols="50" oninput="updateValue(3)"></textarea>
-            <p>Принять участвие в СО 2 раза или 1 час КПП.</p>
-            <textarea class="text" id="embedField5Value" rows="1" cols="50" oninput="updateValue(4)"></textarea>
-            <p>Сдать норматив по физ. подготовке.</p>
-            <textarea class="text" id="embedField6Value" rows="1" cols="50" oninput="updateValue(5)"></textarea>
-            <p>скрин из Дискорда ЧП, с ролью "ARMY"</p>
-            <textarea class="text" id="embedField7Value" rows="1" cols="50" oninput="updateValue(6)"></textarea>
-            <p>Сдача итогового экзамена.</p>
-            <textarea class="text" id="embedField8Value" rows="1" cols="50" oninput="updateValue(7)"></textarea>
-            <button class="buttonup" type="submit" onclick="resetForm()">Отправить</button>
+    <nav class="navigation">
+        <a href="index.html" class="logo">National Guard</a>
+        <ul class="navigation-holder">
+          <li class="nav-links">
+              <a href="academy.html">Academy</a>
+          </li>
+          <li class="nav-links">
+              <a href="kmb.html">КМБ</a>
+          </li>
+          <li class="nav-links">
+              <a href="military_academy.html">Military Academy</a>
+          </li>
+          </nav>
+    <form id="webhookForm">
+<div class="center">
+        <div class="form-group">
+            <h2 style="height: 50px; margin-top: 20px;">Переатестация</h2>
+            <p>Имя Фамилия</p>
+            <input type="text" id="one" name="one" value="" class="form-group-input">
         </div>
-        <script>
-        function resetForm() {
-            const textareas = document.querySelectorAll('textarea.text');
-            textareas.forEach(textarea => {
-                textarea.value = '';
-            });
-        }
-        </script>
-    
-    <script>
-        function updateValue(fieldIndex) {
-            const payloadJson = document.querySelector('input[name="payload_json"]');
-            const embedField1Value = document.querySelector('#embedField1Value');
-            const embedField3Value = document.querySelector('#embedField3Value');
-            const embedField4Value = document.querySelector('#embedField4Value');
-            const embedField5Value = document.querySelector('#embedField5Value');
-            const embedField6Value = document.querySelector('#embedField6Value');
-            const embedField7Value = document.querySelector('#embedField7Value');
-            const embedField8Value = document.querySelector('#embedField8Value');
-            const embedField999Value = document.querySelector('#embedField999Value');
-            const payload = JSON.parse(payloadJson.value);
-            if (payload.embeds[0].fields.length <= fieldIndex) {
-                payload.embeds[0].fields.push({});
-            }
-            payload.embeds[0].fields[fieldIndex].value = fieldIndex === 1 ? "Переатестация" : fieldIndex === 0 ? embedField1Value.value : fieldIndex === 2 ? embedField3Value.value : fieldIndex === 3 ? embedField4Value.value : fieldIndex === 4 ? embedField5Value.value : fieldIndex === 5 ? embedField6Value.value : fieldIndex === 6 ? embedField7Value.value : fieldIndex === 7 ? embedField8Value.value : fieldIndex === 8 ? embedField999Value.value : "";
-            payloadJson.value = JSON.stringify(payload);
-        }
-    </script>
+        <div class="form-group">
+            <p>Лекция по Караульному уставу и Тен-Кодам</p>
+            <input type="text" id="three" name="three" value="" class="form-group-input">
+        </div>
+        <div class="form-group">
+            <p>Получить лицензию на оружие</p>
+            <input type="text" id="four" name="four" value="" class="form-group-input">
+        </div>
+        <div class="form-group">
+            <p>Скинуть скрин из Дискорда ЧП, что у вас там есть роль "ARMY".</p>
+            <input type="text" id="six" name="six" value="" class="form-group-input">
+        </div>
+        <div class="form-group">
+            <p>Сдача итогового экзамена.</p>
+            <input type="text" id="seven" name="seven" value="" class="form-group-input">
+        </div>
+        <button type="submit" class="submite">Отправить заявку</button>
     </form>
 </div>
-  <div class="centervidio">
-  </div>
+
+    <script>
+        document.getElementById('webhookForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const one = document.getElementById('one').value;
+    const three = document.getElementById('three').value;
+    const four = document.getElementById('four').value;
+    const five = document.getElementById('five').value;
+    const six = document.getElementById('six').value;
+    const seven = document.getElementById('seven').value;
+
+    if (!one || !three || !four || !five) {
+        alert('Пожалуйста, заполните все поля.');
+        return;
+    }
+
+    const payload = {
+        content: '<@&1086341976988860456>',
+        embeds: [ 
+            {
+                title: 'Новая заявка! От Academy!',
+                color: 5428281,
+                fields: [
+                    {
+                        name: 'Имя Фамилия',
+                        value: one,
+                        inline: false
+                    },
+                    {
+                        name: 'С какого на какой повышаетесь?',
+                        value: 'Переатестация',
+                        inline: false
+                    },
+                    {
+                        name: 'Лекция по Караульному уставу и Тен-Кодам',
+                        value: three,
+                        inline: false
+                    },
+                    {
+                        name: 'Получить лицензию на оружие',
+                        value: four,
+                        inline: false
+                    },
+                    {
+                        name: 'Скинуть скрин из Дискорда ЧП, что у вас там есть роль "ARMY".',
+                        value: six,
+                        inline: false
+                    },
+                    {
+                        name: 'Сдача итогового экзамена.',
+                        value: seven,
+                        inline: false
+                    }
+                ],
+                "footer": {
+                        "text": "By Satofan"
+                    }
+            }
+        ]
+    };
+
+    try {
+        const response = await fetch('https://discord.com/api/webhooks/1212088104639537172/k0Afskrb-4ZFJ9LBsF4Sem9r-QUJYJIVjmP3GqMyXU_aLCDKsQY58krxS547Mv_bVXxf', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            throw new Error('Ошибка при отправке заявки');
+        }
+
+        alert('Заявка успешно отправлена!');
+
+        // Очистка полей формы
+        document.getElementById('one').value = '';
+        document.getElementById('three').value = '';
+        document.getElementById('four').value = '';
+        document.getElementById('five').value = '';
+        document.getElementById('six').value = '';
+        document.getElementById('seven').value = '';
+
+    } catch (error) {
+        console.error('Ошибка:', error);
+        alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.');
+    }
+});
+    </script>
 </body>
 </html>
