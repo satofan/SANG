@@ -40,10 +40,6 @@
             <input type="text" id="five" name="five" value="" class="form-group-input kmb">
         </div>
         <div class="form-group">
-            <p>Принять участие в поставке 2 раза</p>
-            <input type="text" id="six" name="six" value="" class="form-group-input kmb">
-        </div>
-        <div class="form-group">
             <p>Пройти тренеровку по физической подготовке</p>
             <input type="text" id="seven" name="seven" value="" class="form-group-input kmb">
         </div>
@@ -59,10 +55,9 @@
     const three = document.getElementById('three').value;
     const four = document.getElementById('four').value;
     const five = document.getElementById('five').value;
-    const six = document.getElementById('six').value;
     const seven = document.getElementById('seven').value;
 
-    if (!one || !three || !four || !five || !six || !seven) {
+    if (!one || !three || !four || !five || !seven) {
         alert('Пожалуйста, заполните все поля.');
         return;
     }
@@ -97,11 +92,6 @@
                     {
                         name: 'Принять военную присягу.',
                         value: five,
-                        inline: false
-                    },
-                    {
-                        name: 'Принять участие в поставке 2 раза',
-                        value: six,
                         inline: false
                     },
                     {
